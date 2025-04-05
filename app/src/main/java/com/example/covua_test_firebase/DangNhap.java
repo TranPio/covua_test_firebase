@@ -1,9 +1,11 @@
 package com.example.covua_test_firebase;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,6 +42,14 @@ public class DangNhap extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        // ==== SỰ KIỆN NÚT ====
+        Button btnsignup = findViewById(R.id.btnsignup);
+
+        btnsignup.setOnClickListener(v->{
+           Intent intent = new Intent(DangNhap.this, DangKy.class);
+           startActivity(intent);
         });
     }
 }

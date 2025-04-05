@@ -39,17 +39,25 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        Button btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(v -> {
-            // Chuyển sang LoginActivity
-            Intent intent = new Intent(MainActivity.this, DangNhap.class);
-            startActivity(intent);
-        });
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        // ==== SỰ KIỆN NÚT ====
+
+        Button btnLogin = findViewById(R.id.btnlogin);
+        Button btnRegister = findViewById(R.id.btnsignup);
+
+        btnLogin.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, DangNhap.class);
+            startActivity(intent);
+        });
+
+        btnRegister.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, DangKy.class);
+            startActivity(intent);
         });
     }
 }
