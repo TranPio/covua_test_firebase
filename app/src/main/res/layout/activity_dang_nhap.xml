@@ -6,11 +6,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DangNhap">
+
     <ImageView
+        android:id="@+id/IVBG"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="centerCrop"
         android:src="@drawable/dangnhap"
-        android:scaleType="centerCrop">
-    </ImageView>
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="163dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="116dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/IVBG" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="126dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_login_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="126dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_signup_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="163dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/IVBG"
+        app:layout_constraintStart_toStartOf="@+id/IVBG"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

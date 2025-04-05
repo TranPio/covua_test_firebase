@@ -7,12 +7,49 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Hình nền -->
+
+    <!-- Nút Đăng Nhập -->
+
+    <!-- Nút Đăng Ký -->
+
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
         android:src="@drawable/main"
-        android:scaleType="centerCrop"/>
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-16dp" />
 
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="192dp"
+        android:layout_height="59dp"
 
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="268dp"
+        android:background="@drawable/btn_login_bg"
+
+        android:textColor="#F1F6F9"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="192dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="268dp"
+        android:layout_marginEnd="172dp"
+        android:background="@drawable/btn_signup_bg"
+        android:textAllCaps="false"
+        android:textColor="#F1F6F9"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toEndOf="@+id/btnLogin"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
