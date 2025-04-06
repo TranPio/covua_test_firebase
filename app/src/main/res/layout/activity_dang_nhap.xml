@@ -20,16 +20,15 @@
 
     <Button
         android:id="@+id/btnsignup"
-        android:layout_width="147dp"
-        android:layout_height="33dp"
+        android:layout_width="126dp"
+        android:layout_height="30dp"
         android:background="@android:color/transparent"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/IVBG"
-        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.817" />
+        app:layout_constraintVertical_bias="0.821" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
