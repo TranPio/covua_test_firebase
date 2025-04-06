@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
     id("com.google.firebase.firebase-perf")
     id("com.google.gms.google-services")
-
 }
 
 android {

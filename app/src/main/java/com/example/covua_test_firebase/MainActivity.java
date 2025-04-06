@@ -12,12 +12,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
+import com.google.firebase.perf.FirebasePerformance;
+import com.google.firebase.perf.metrics.Trace;
 public class MainActivity extends AppCompatActivity {
-
+    Trace appStartTrace;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        appStartTrace = FirebasePerformance.getInstance().newTrace("app_start_time");
+        appStartTrace.start();
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -44,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+        appStartTrace.stop();
         // ==== SỰ KIỆN NÚT ====
 
         Button btnLogin = findViewById(R.id.btnlogin);
