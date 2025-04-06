@@ -30,5 +30,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.821" />
 
+    <EditText
+        android:id="@+id/edtUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="208dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="308dp"
+        android:layout_marginBottom="160dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/IVBG" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

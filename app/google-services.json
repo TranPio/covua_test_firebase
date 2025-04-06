@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "639434724240",
+    "project_id": "my-app-moblie-1",
+    "storage_bucket": "my-app-moblie-1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639434724240:android:a8d026e89d6b26e132d915",
+        "android_client_info": {
+          "package_name": "com.example.covua_test_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrHetU_AokpniZhAYWxCHyddBT98zb6WI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
