@@ -35,25 +35,26 @@
 
     <Button
         android:id="@+id/btn_push"
-        android:layout_width="212dp"
-        android:layout_height="58dp"
+        android:layout_width="195dp"
+        android:layout_height="42dp"
         android:background="@drawable/push_data"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_data"
-        app:layout_constraintVertical_bias="0.102" />
+        app:layout_constraintVertical_bias="0.09" />
 
     <Button
         android:id="@+id/btn_get"
-        android:layout_width="228dp"
-        android:layout_height="61dp"
+        android:layout_width="195dp"
+        android:layout_height="42dp"
         android:layout_marginTop="16dp"
-        android:text="GET Data"
+        android:background="@drawable/get_data"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_push" />
 
