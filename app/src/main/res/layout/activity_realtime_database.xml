@@ -60,7 +60,7 @@
         android:layout_height="63dp"
         android:layout_marginBottom="32dp"
         android:textSize="20sp"
-        android:background="#EFEB7E"
+        android:background="@drawable/khung"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
