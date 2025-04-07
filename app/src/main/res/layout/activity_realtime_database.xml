@@ -10,25 +10,53 @@
 
     <EditText
         android:id="@+id/edt_data"
-        android:layout_width="452dp"
-        android:layout_height="83dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="388dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="24dp"
         android:textSize="20sp"
+        android:background="#FBEDC1"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_push"
-        android:layout_width="278dp"
-        android:layout_height="78dp"
+        android:layout_width="229dp"
+        android:layout_height="65dp"
         android:text="Push Data"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_data"
-        app:layout_constraintVertical_bias="0.297" />
+        app:layout_constraintVertical_bias="0.102" />
+
+    <Button
+        android:id="@+id/btn_get"
+        android:layout_width="228dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="16dp"
+        android:text="GET Data"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_push" />
+
+    <TextView
+        android:id="@+id/textview_get"
+        android:layout_width="391dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="32dp"
+        android:textSize="20sp"
+        android:background="#EFEB7E"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_get"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
