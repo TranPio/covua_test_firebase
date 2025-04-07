@@ -3,6 +3,7 @@ package com.example.covua_test_firebase;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -21,6 +22,9 @@ import com.google.firebase.database.ValueEventListener;
 public class RealtimeDatabase extends AppCompatActivity {
     private EditText edtData;
     private Button btnPush;
+    private Button btnGet;
+    private TextView textviewGet;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
