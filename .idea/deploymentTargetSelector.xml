@@ -19,13 +19,13 @@
       <SelectionState runConfigName="RealtimeDatabase (5)">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="RealtimeDatabase">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="RealtimeDatabase (1)">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="RealtimeDatabase (2)">
+      <SelectionState runConfigName="RealtimeDatabase (4)">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="RealtimeDatabase">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
