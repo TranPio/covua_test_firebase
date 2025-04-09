@@ -33,11 +33,15 @@ public class RealtimeDatabase extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_realtime_database);
+
+        // Xử lý giao diện tránh che bởi status bar
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Ẩn status bar và navigation bar nếu Android >= R
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             getWindow().setDecorFitsSystemWindows(false);
             WindowInsetsController controller = getWindow().getInsetsController();
@@ -48,73 +52,66 @@ public class RealtimeDatabase extends AppCompatActivity {
                 );
             }
         }
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
-    // Lấy tham chiếu đến ô nhập dữ liệu (EditText) để người dùng nhập nội dung
-        EditText edtData = findViewById(R.id.edt_data);
+        // Ánh xạ view từ layout XML
+        edtData = findViewById(R.id.edt_data);
+        btnPush = findViewById(R.id.btn_push);
+        btnGet = findViewById(R.id.btn_get);
+        textviewGet = findViewById(R.id.textview_get);
 
-    // Lấy tham chiếu đến nút "Push" (Button) để xử lý sự kiện khi nhấn nút
-        Button btnPush = findViewById(R.id.btn_push);
-
-    // Gán sự kiện click cho nút "Push" - khi bấm nút thì gọi hàm xử lý ghi dữ liệu
+        // Ghi dữ liệu khi nhấn nút "Push"
         btnPush.setOnClickListener(v -> onClickPushData());
 
+        // Đọc dữ liệu khi nhấn nút "Get"
+        btnGet.setOnClickListener(v -> readFromDatabase());
     }
-    private void onClickPushData() {
-        // Lấy chuỗi dữ liệu người dùng vừa nhập từ EditText
-        String value = edtData.getText().toString();
 
-        // Lấy instance của Firebase Realtime Database
+    // Hàm ghi dữ liệu lên Firebase
+    private void onClickPushData() {
+        // Kết nối tới Firebase Realtime Database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        // Tạo đường dẫn tham chiếu đến node "Text" trong Firebase
+        // Tham chiếu tới node "Text" trong database
         DatabaseReference myRef = database.getReference("Text");
 
-        // Ghi dữ liệu lên Firebase tại node "Text"
+        // Lấy dữ liệu từ EditText
+        String value = edtData.getText().toString().trim();
+
+
         myRef.setValue(value)
                 .addOnSuccessListener(aVoid ->
-                        Toast.makeText(this, "Ghi dữ liệu thành công",
-                                Toast.LENGTH_SHORT).show())
+                        Toast.makeText(this,
+                                "Ghi dữ liệu thành công", Toast.LENGTH_SHORT).show())
                 .addOnFailureListener(e ->
-                        Toast.makeText(this, "Lỗi khi ghi dữ liệu",
-                                Toast.LENGTH_SHORT).show());
+                        Toast.makeText(this,
+                                "Lỗi khi ghi dữ liệu", Toast.LENGTH_SHORT).show());
     }
 
-    // Hàm đọc dữ liệu từ Firebase tại node "Text"
+    // Hàm đọc dữ liệu từ Firebase và hiển thị lên TextView
     private void readFromDatabase() {
-        // Lấy instance của Realtime Database
+        // Kết nối tới Firebase Realtime Database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        // Tham chiếu đến node "Text"
+        // Tham chiếu tới node "Text"
         DatabaseReference myRef = database.getReference("Text");
 
-        // Đọc dữ liệu một lần từ node "Text"
+        // Đọc dữ liệu một lần (single event)
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-
-            // Khi dữ liệu thay đổi (hoặc đọc thành công)
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // Lấy giá trị dạng chuỗi từ snapshot
+                // Lấy dữ liệu từ snapshot (dạng chuỗi)
                 String value = snapshot.getValue(String.class);
 
-                // Hiển thị giá trị bằng Toast
-                Toast.makeText(RealtimeDatabase.this, "Giá trị: " + value,
-                        Toast.LENGTH_SHORT).show();
+                textviewGet.setText(value); // Hiển thị giá trị trong TextView
+                Toast.makeText(RealtimeDatabase.this,
+                        "Đọc dữ liệu thành công", Toast.LENGTH_SHORT).show();
             }
 
-            // Nếu có lỗi xảy ra khi đọc
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                // Hiển thị thông báo lỗi
-                Toast.makeText(RealtimeDatabase.this, "Đọc thất bại!",
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(RealtimeDatabase.this,
+                        "Đọc dữ liệu thất bại", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
-
 }
