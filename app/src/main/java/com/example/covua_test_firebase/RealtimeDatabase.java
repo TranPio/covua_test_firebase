@@ -68,6 +68,9 @@ public class RealtimeDatabase extends AppCompatActivity {
 
     // Hàm ghi dữ liệu lên Firebase
     private void onClickPushData() {
+        // Hiển thị thông báo để kiểm tra nút đã click
+        Toast.makeText(this, "Đã click nút Push",
+                Toast.LENGTH_SHORT).show();
         // Kết nối tới Firebase Realtime Database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
@@ -89,6 +92,9 @@ public class RealtimeDatabase extends AppCompatActivity {
 
     // Hàm đọc dữ liệu từ Firebase và hiển thị lên TextView
     private void readFromDatabase() {
+        // Hiển thị thông báo để kiểm tra nút đã click
+        Toast.makeText(this, "Đã click nút Get",
+                Toast.LENGTH_SHORT).show();
         // Kết nối tới Firebase Realtime Database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
