@@ -78,8 +78,7 @@ public class RealtimeDatabase extends AppCompatActivity {
         DatabaseReference myRef = database.getReference("Text");
 
         // Lấy dữ liệu từ EditText
-        String value = edtData.getText().toString().trim();
-
+        String value = edtData.getText().toString();
 
         myRef.setValue(value)
                 .addOnSuccessListener(aVoid ->
