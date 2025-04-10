@@ -27,9 +27,8 @@
         android:fontFamily="@font/pacifico_regular"
         android:textStyle="normal"
         android:paddingStart="26dp"
-        android:paddingTop="8dp"
+        android:gravity="center_vertical"
         android:paddingEnd="26dp"
-        android:paddingBottom="8dp"
         android:textColor="@color/white"
         android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,13 +70,12 @@
         android:id="@+id/textview_get"
         android:layout_width="258dp"
         android:layout_height="50dp"
+        android:gravity="center_vertical"
         android:layout_marginBottom="48dp"
         android:background="@drawable/text_border"
         android:fontFamily="@font/pacifico_regular"
         android:paddingStart="26dp"
-        android:paddingTop="8dp"
         android:paddingEnd="26dp"
-        android:paddingBottom="8dp"
         android:textColor="@color/white"
         android:textSize="21sp"
         android:textStyle="normal"
@@ -85,6 +83,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_get"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.888" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
